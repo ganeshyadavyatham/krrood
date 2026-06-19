@@ -1,10 +1,3 @@
-"""
-Step 6 — The warning object.
-
-A small, printable record of an out-of-distribution detection: which rule
-node flagged it, the log-likelihood that triggered it, and a human-readable
-reason. This is what gives your system "traceability" (the assignment's word).
-"""
 
 from dataclasses import dataclass
 from typing_extensions import Optional
