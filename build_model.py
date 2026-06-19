@@ -1,32 +1,3 @@
-"""
-build_model.py  —  Step 5 (probabilistic-model 6.3.0 / nx backend)
-
-We do NOT learn a JPT here (the external `jpt` package doesn't build on
-aarch64). Instead we *construct* a probabilistic circuit by hand that
-represents the distribution of "known kitchen objects".
-
-The circuit is a mixture (SumUnit) over three components, one per object
-type. Each component is a ProductUnit of independent Gaussians over
-[weight, size, material]:
-
-        SumUnit  (the mixture: "a kitchen object is one of these")
-        ├── 1/3 · ProductUnit(cup)      N(weight) · N(size) · N(material)
-        ├── 1/3 · ProductUnit(pitcher)  N(weight) · N(size) · N(material)
-        └── 1/3 · ProductUnit(pot)      N(weight) · N(size) · N(material)
-
-material is kept numeric for now (ceramic=0, glass=1, metal=2) so we
-don't get blocked on symbolic-variable encoding. Each component uses a
-tight Gaussian around that code, so "glass" objects cluster at ~1.
-
-This whole circuit IS the "trained" model: it supports log_likelihood,
-marginal, conditional, and truncated — the exact API you need for
-Steps 8, 9, and 10.
-
-Run:
-    python build_model.py
-"""
-
-
 import numpy as np
 
 from random_events.variable import Continuous
