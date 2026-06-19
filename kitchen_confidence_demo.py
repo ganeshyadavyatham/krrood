@@ -1,22 +1,4 @@
-"""
-Step 8 — Full end-to-end demo (basic, full-evidence version).
 
-Runs the kitchen grasping scenario and the confidence check together:
-  - normal cup / pitcher / pot  -> familiar, no warning
-  - impossible cup (50 kg, 10 cm) -> UnfamiliarSampleWarning
-  - tagless object (no material)  -> UnfamiliarSampleWarning
-
-This is the milestone to show your supervisor. It demonstrates every part
-of the assignment in basic form: probabilistic hook (log_likelihood),
-warning mechanism (threshold + UnfamiliarSampleWarning), traceability
-(node name on each warning), and the kitchen demo use case.
-
-Place this file in ~/krrood/ next to build_model.py, with the `confidence/`
-package alongside it.
-
-Run:
-    python kitchen_confidence_demo.py
-"""
 
 from dataclasses import dataclass
 from typing_extensions import Optional
