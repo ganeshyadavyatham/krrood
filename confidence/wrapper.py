@@ -1,20 +1,3 @@
-"""
-Step 7 — The confidence-aware wrapper.
-
-Scores a kitchen object against the joint probabilistic circuit using a
-FULL-EVIDENCE query (log_likelihood over the whole [weight, size, material]
-vector). If the log-likelihood falls below a configurable threshold, it
-records an UnfamiliarSampleWarning.
-
-This is the "basic" version your plan targets for the supervisor meeting:
-- full evidence only (no marginal / conditional yet),
-- one check per object,
-- a single configurable threshold.
-
-Steps 9 and 10 will refine WHERE this is called (per node) and WHICH slice
-of the model it queries (marginal / conditional). The plumbing here stays.
-"""
-
 import numpy as np
 from dataclasses import dataclass, field
 from typing_extensions import List
