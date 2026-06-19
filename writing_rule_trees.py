@@ -1,26 +1,4 @@
-"""
-Advanced Example: Rule Trees with Alternatives and Exceptions
-=============================================================
 
-Runnable Python version of:
-    krrood/examples/eql/writing_rule_trees.md
-
-This example demonstrates how to build a rule tree in KRROOD's EQL using
-refinement (specialization) and alternatives (mutually exclusive branches):
-- Start from a base conclusion;
-- Add a refined exception (more specific case) that overrides the base when a
-  further condition is met;
-- Add alternatives that apply under different conditions.
-
-We construct objects symbolically using a `with query:` block and `Add`, with
-`let` placeholders to describe relationships. Three views (Drawer, Door,
-Wardrobe) are inferred from the world's connections.
-
-Run:
-    python writing_rule_trees.py
-
-You should see three results printed (a Drawer, a Door, and a Wardrobe).
-"""
 
 from dataclasses import dataclass, field
 from typing_extensions import List
